@@ -2,13 +2,17 @@
   "name": "react-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://manojpanthi123.github.io/phone-fix-booking",
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^13.5.0",
+    "leaflet": "^1.9.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "react-router-dom": "^6.30.6",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -16,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build && cp build/index.html build/404.html",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

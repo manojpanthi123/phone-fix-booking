@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Phone Fix Booking – Weeks 10 to 14
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React SPA following the class lecture: NavBar, Header, Footer, and homepage form components.
 
-## Available Scripts
+## Run
 
-In the project directory, you can run:
+```bash
+cd react-demo
+npm start
+```
 
-### `npm start`
+Leave that command running, then open [http://localhost:3000](http://localhost:3000).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Use `http`, not `https`. Safari cannot connect if `npm start` is not running. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## W10 included
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Navigation: Home / Extension
+- Extension page describes five features and each one runs: shop map, booking dashboard, repair calendar, charts, and drag-and-drop courtesy loan
+- `review.doc` in the project folder discusses the issues, the Supabase step that is still open, and what could be improved
+- Homepage UI (Customer, Repair, Courtesy, Cost)
+- Input validation (names, post code, phone, email, dates, warranty, IMEI, selects)
+- Courtesy phone: one phone and/or one charger
+- Cost: disabled fields, $ format, bond, service fee, GST 15%
+- FAQ button opens a new window. Questions come from JSON and the search box filters them.
+- Submit validates the form, stores the repair booking, then opens `/invoice`.
+- Home passes `attachedData` with `useNavigate`. Invoice reads it with `useLocation`.
+- The job sheet shows every field, a unique job number, the invoice time in 24-hour form, and the repair time in 12-hour form.
+- If `REACT_APP_SUPABASE_URL` and `REACT_APP_SUPABASE_ANON_KEY` are set, bookings are stored in the Supabase `bookings` table (`supabase/bookings.sql`). Otherwise they are stored in this browser.

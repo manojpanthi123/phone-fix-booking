@@ -1,0 +1,29 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}}
+\fs24
+\b Phone Fix Booking System \u8212? Review\b0\par
+ITWD6.408 Assignment 2, Semester 2 2026\par
+\par
+\b What the site does\b0\par
+The React app in the react-demo folder is the Phone Fix booking site. Home collects the customer, the repair, a courtesy phone and charger, and the cost. Submit checks the fields, stores the job, and opens the invoice. The invoice is filled from data passed with useNavigate and read with useLocation. FAQ opens in a new window and the questions are loaded from a JSON file with a search box. The Extension page has the statement of authenticity and five working JavaScript features.\par
+\par
+\b Issues that are sorted\b0\par
+Passing the bond, the warranty flag, and the customer type between the form sections took the longest. Each section keeps its own state and sends the value up to Home, and Home passes it down to Cost. On submit, Home builds one attachedData object and the Invoice page reads that object. If the invoice is opened with no data, it shows an error and also lists jobs that were saved earlier.\par
+\par
+Dates were easy to get wrong. The purchase date has to be before today, the repair date has to be after today and after the purchase date, and the warranty box is turned off when the purchase is more than 24 months ago. The invoice time is shown in 24-hour form and the repair time is shown in 12-hour form with AM or PM.\par
+\par
+The courtesy list allows one phone and one charger. Choosing an item updates the bond. A business customer is charged a bond of $0. The service fee is $85 unless the phone is under warranty. GST is 15 percent. The cost boxes are disabled and use a $0.00 format. Reset puts the form back to those defaults.\par
+\par
+The FAQ button uses window.open. Some browsers block the new window until the button is clicked, which is why it is a button click and not an automatic popup.\par
+\par
+The map uses Leaflet and OpenStreetMap. The default Leaflet pin image does not load cleanly inside Create React App, so the shop pin is a small HTML marker instead.\par
+\par
+\b Issue that is still open\b0\par
+The brief asks for the repair job to be stored in a Supabase table named bookings. The insert and select code is in src/services/bookingStore.js and the table script is supabase/bookings.sql. The app only talks to Supabase when REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY are set, then npm start is run again. Without those keys the jobs are stored in this browser so the invoice, dashboard, calendar, and charts still work. Connecting a real Supabase project is the step that is not finished.\par
+\par
+\b What I would change\b0\par
+I would connect Supabase at the start, before building the invoice, so every test booking was already in the database. I would also add a login later, using a users table, so a customer only sees their own jobs. Address autocomplete would save typing on the street and city fields. The charts are drawn with CSS from the jobs already loaded. A chart library would look sharper, but it was not needed to show the counts.\par
+\par
+\b The course\b0\par
+The weekly worksheets on props, useState, useEffect, and passing data with the router were the useful part, because the form is really five components sharing one booking. A short Supabase setup in class, with the bookings table created together, would have made the database mark clearer. Building the page mobile first with grid and flexbox matched the figure better than trying to fix the layout at the end.\par
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the bond for?",
+    "answer": "The bond is a refundable deposit for a courtesy phone and/or charger while your phone is being repaired. Consumer customers pay the bond shown for the item. Business customers are not charged a bond."
+  },
+  {
+    "question": "Why do I have to pay a service fee?",
+    "answer": "A service fee of $85 is charged when the phone is out of warranty. If the warranty box is checked, the service fee is $0.00."
+  },
+  {
+    "question": "Do I need a charger with my courtesy phone?",
+    "answer": "No. A charger is optional. You may borrow one phone, one charger, or both. You cannot borrow more than one phone or more than one charger."
+  },
+  {
+    "question": "Why isn't my phone under warranty?",
+    "answer": "The warranty box is turned off when the purchase date is more than 24 months before today. If the phone was bought within 24 months, you can tick or untick the warranty box."
+  },
+  {
+    "question": "What is an IMEI number?",
+    "answer": "The IMEI identifies the handset. It must be exactly 15 numbers, with no letters or spaces."
+  },
+  {
+    "question": "When can I book the repair date?",
+    "answer": "The purchase date must be before today. The repair date must be after today, and it must also be later than the purchase date."
+  },
+  {
+    "question": "Do business customers pay a bond?",
+    "answer": "No. Choose Business as the customer type and the bond in the cost section stays at $0.00, even if a courtesy phone or charger is added."
+  },
+  {
+    "question": "How is the total calculated?",
+    "answer": "The total is the bond plus the service fee, excluding GST. GST is 15% of that total. Total (+GST) is the total plus GST. All amounts are shown in $0.00 format and the cost boxes cannot be typed into."
+  },
+  {
+    "question": "Which fields are required on the booking form?",
+    "answer": "Fields marked with * are required. That includes customer type, title, first name, last name, street, city, a 4-number post code, phone number, email, purchase date, repair date, IMEI, make, fault category, and description."
+  },
+  {
+    "question": "What names are allowed for first name and last name?",
+    "answer": "First name and last name may contain letters, spaces, and a hyphen only. Numbers and other symbols are not accepted."
+  }
+]
