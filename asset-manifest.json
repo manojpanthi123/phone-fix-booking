@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/phone-fix-booking/static/css/main.2b0e8ca5.css",
+    "main.js": "/phone-fix-booking/static/js/main.aa8e7c64.js",
+    "static/js/453.f47881f3.chunk.js": "/phone-fix-booking/static/js/453.f47881f3.chunk.js",
+    "index.html": "/phone-fix-booking/index.html",
+    "main.2b0e8ca5.css.map": "/phone-fix-booking/static/css/main.2b0e8ca5.css.map",
+    "main.aa8e7c64.js.map": "/phone-fix-booking/static/js/main.aa8e7c64.js.map",
+    "453.f47881f3.chunk.js.map": "/phone-fix-booking/static/js/453.f47881f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b0e8ca5.css",
+    "static/js/main.aa8e7c64.js"
+  ]
+}
