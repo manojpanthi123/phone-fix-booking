@@ -13,22 +13,27 @@ function Demo1() {
   const mapNode = useRef(null);
 
   useEffect(() => {
-    const map = L.map(mapNode.current).setView([SHOP.lat, SHOP.lng], 15);
+    const map = L.map(mapNode.current).setView([-41.2, 173.8], 5);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap"
     }).addTo(map);
 
-    const pin = L.divIcon({
-      className: "shop-pin",
-      html: "<span>Phone Fix</span>",
-      iconSize: [88, 28],
-      iconAnchor: [44, 28]
-    });
+    L.rectangle([[-39.85, 176.45], [-39.15, 177.25]], {
+      color: "#c62828",
+      weight: 2,
+      fillColor: "#c62828",
+      fillOpacity: 0.12
+    }).addTo(map);
 
-    L.marker([SHOP.lat, SHOP.lng], { icon: pin })
+    L.circleMarker([SHOP.lat, SHOP.lng], {
+      radius: 7,
+      color: "#c62828",
+      fillColor: "#c62828",
+      fillOpacity: 1
+    })
       .addTo(map)
-      .bindPopup("<strong>" + SHOP.name + "</strong><br>" + SHOP.address)
-      .openPopup();
+      .bindTooltip(SHOP.address, { permanent: true, direction: "top", className: "shop-label" })
+      .openTooltip();
 
     const timer = setTimeout(() => map.invalidateSize(), 150);
     return () => {
@@ -39,10 +44,8 @@ function Demo1() {
 
   return (
     <section>
-      <h3>Demo 1: Interactive map</h3>
-      <p>
-        Zoom and drag the map. The pin marks the repair shop at {SHOP.address}.
-      </p>
+      <h3>DEMO 1: INTERACTIVE MAP</h3>
+      <p>Zoom and drag the map of New Zealand. The label marks {SHOP.address}.</p>
       <div ref={mapNode} className="shop-map" role="region" aria-label="Shop map" />
     </section>
   );

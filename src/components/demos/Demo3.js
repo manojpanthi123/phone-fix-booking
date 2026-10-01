@@ -60,8 +60,14 @@ function Demo3() {
           if (!day) return <div key={"empty" + index} className="cal-day empty" />;
           const key = cursor.year + "-" + pad(cursor.month + 1) + "-" + pad(day);
           const jobs = byDate[key] || [];
+          const weekend = index % 7 >= 5;
+          const now = new Date();
+          const today = now.getFullYear() === cursor.year && now.getMonth() === cursor.month && now.getDate() === day;
+          const className = ["cal-day", jobs.length ? "booked" : "", weekend ? "weekend" : "", today ? "today" : ""]
+            .filter(Boolean)
+            .join(" ");
           return (
-            <div key={key} className={jobs.length ? "cal-day booked" : "cal-day"}>
+            <div key={key} className={className}>
               <span>{day}</span>
               {jobs.slice(0, 2).map((job) => (
                 <small key={job.jobNumber}>{job.jobNumber}</small>

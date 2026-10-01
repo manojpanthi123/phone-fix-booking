@@ -37,8 +37,7 @@ function writeLocal(bookings) {
 function toRow(booking) {
   return {
     job_number: booking.jobNumber,
-    invoice_at: booking.invoiceAt,
-    invoice_display: booking.invoiceDisplay,
+    invoice_date: booking.invoiceDisplay,
     customer_type: booking.customer.customerType,
     title: booking.customer.title,
     first_name: booking.customer.firstName,
@@ -52,7 +51,7 @@ function toRow(booking) {
     purchase_date: booking.repair.purchaseDate,
     repair_date: booking.repair.repairDate,
     repair_time: booking.repair.repairTime,
-    repair_display: booking.repairDisplay,
+    repair_date_time: booking.repairDisplay,
     warranty: booking.repair.warranty,
     imei: booking.repair.imei,
     make: booking.repair.make,
@@ -64,17 +63,16 @@ function toRow(booking) {
     service_fee: booking.costs.serviceFee,
     total: booking.costs.total,
     gst: booking.costs.gst,
-    total_gst: booking.costs.totalGst,
-    business: booking.business
+    total_gst: booking.costs.totalGst
   };
 }
 
 function fromRow(row) {
   return {
     jobNumber: row.job_number,
-    invoiceAt: row.invoice_at,
-    invoiceDisplay: row.invoice_display,
-    repairDisplay: row.repair_display,
+    invoiceAt: row.created_at || row.invoice_date,
+    invoiceDisplay: row.invoice_date,
+    repairDisplay: row.repair_date_time,
     customer: {
       customerType: row.customer_type,
       title: row.title,
@@ -187,7 +185,7 @@ export async function listBookings() {
     const { data, error } = await client
       .from("bookings")
       .select("*")
-      .order("invoice_at", { ascending: false });
+      .order("created_at", { ascending: false });
     if (error) {
       throw new Error(error.message);
     }

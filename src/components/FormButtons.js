@@ -1,6 +1,9 @@
+import { routerBasename } from "../utils/basename";
+
 function openFaqWindow() {
+  const base = routerBasename === "/" ? "" : routerBasename;
   window.open(
-    (process.env.PUBLIC_URL || "") + "/faq",
+    base + "/faq",
     "PhoneFixFAQ",
     "width=860,height=920,scrollbars=yes,resizable=yes"
   );

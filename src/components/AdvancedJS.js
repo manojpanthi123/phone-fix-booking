@@ -48,7 +48,7 @@ function AdvancedJS() {
       </section>
 
       <section className="demo-board" aria-label="Advanced JS demos">
-        <h2>Extension page: Advanced JS demos</h2>
+        <h2>&quot;Extension&quot; Page: Advanced JS DEMOS</h2>
         <div className="demo-layout">
           <div className="demo-menu" role="tablist">
             {demos.map((demo) => (

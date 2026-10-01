@@ -14,7 +14,8 @@ function Demo5() {
     if (item.type === "charger") setCharger(item);
   }
 
-  const bond = business ? 0 : (phone ? phone.bond : 0) + (charger ? charger.bond : 0);
+  const itemTotal = (phone ? phone.bond : 0) + (charger ? charger.bond : 0);
+  const bond = business ? 0 : itemTotal;
 
   return (
     <section>
@@ -27,6 +28,11 @@ function Demo5() {
         <input type="checkbox" checked={business} onChange={(event) => setBusiness(event.target.checked)} />
         Business customer
       </label>
+      <p className={business ? "loan-note business" : "loan-note"}>
+        {business
+          ? "Business customer selected. The bond charged is $0.00."
+          : "Consumer customer. The bond is the price of the phone plus the charger."}
+      </p>
       <div className="loan-board">
         <div>
           <h4>Phones</h4>
@@ -64,7 +70,8 @@ function Demo5() {
           <h4>Loan box</h4>
           <p>{phone ? phone.name : "Drop one phone here"}</p>
           <p>{charger ? charger.name : "Drop one charger here"}</p>
-          <p className="demo-result">Bond: {formatMoney(bond)}</p>
+          <p>Item total: {formatMoney(itemTotal)}</p>
+          <p className="demo-result">Bond charged: {formatMoney(bond)}</p>
         </div>
       </div>
     </section>

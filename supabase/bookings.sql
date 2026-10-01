@@ -4,8 +4,8 @@
 create table if not exists public.bookings (
   id bigint generated always as identity primary key,
   job_number text unique not null,
-  invoice_at timestamptz not null,
-  invoice_display text not null,
+  invoice_date text not null,
+  created_at timestamptz not null default now(),
   customer_type text not null,
   title text,
   first_name text,
@@ -19,7 +19,7 @@ create table if not exists public.bookings (
   purchase_date date,
   repair_date date,
   repair_time text,
-  repair_display text,
+  repair_date_time text,
   warranty boolean,
   imei text,
   make text,
@@ -31,8 +31,7 @@ create table if not exists public.bookings (
   service_fee numeric,
   total numeric,
   gst numeric,
-  total_gst numeric,
-  business jsonb
+  total_gst numeric
 );
 
 alter table public.bookings enable row level security;

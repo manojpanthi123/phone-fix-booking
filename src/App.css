@@ -551,10 +551,19 @@ textarea.invalid {
 }
 
 .shop-map {
-  height: 320px;
+  height: 420px;
   width: 100%;
   border: 1px solid #333;
-  background: #d7e3d0;
+  background: #f3e4df;
+}
+
+.shop-label {
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.35rem;
 }
 
 .shop-pin {
@@ -679,29 +688,54 @@ textarea.invalid {
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.2rem;
+  gap: 1px;
+  background: #b9b9b9;
+  border: 1px solid #b9b9b9;
 }
 
 .cal-head,
 .cal-day {
   background: #fff;
-  border: 1px solid #ccc;
-  min-height: 3.4rem;
-  padding: 0.2rem;
-  font-size: 0.75rem;
+  min-height: 4.4rem;
+  padding: 0.3rem 0.35rem;
+  font-size: 0.85rem;
 }
 
 .cal-head {
-  min-height: 0;
-  text-align: center;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
   background: #2f3e4e;
   color: #fff;
 }
 
+.cal-day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
 .cal-day.empty {
-  background: transparent;
-  border-color: transparent;
+  background: #f3f3f3;
+}
+
+.cal-day.weekend:not(.booked) {
+  background: #f7f8fa;
+}
+
+.cal-day.today > span {
+  background: #1d6fd6;
+  color: #fff;
+  border-radius: 50%;
+  min-width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
 }
 
 .cal-day.booked {
@@ -710,6 +744,14 @@ textarea.invalid {
 
 .cal-day small {
   display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #1d6fd6;
+  color: #fff;
+  border-radius: 2px;
+  padding: 0.05rem 0.2rem;
+  font-size: 0.62rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -794,6 +836,18 @@ textarea.invalid {
   gap: 0.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+}
+
+.loan-note {
+  margin: 0 0 0.6rem;
+  padding: 0.45rem 0.6rem;
+  background: #fff;
+  border: 1px solid #333;
+  font-weight: 700;
+}
+
+.loan-note.business {
+  background: #e7f2ea;
 }
 
 @media (min-width: 700px) {

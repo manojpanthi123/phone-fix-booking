@@ -7,6 +7,7 @@ import AdvancedJS from "./components/AdvancedJS";
 import FAQ from "./components/FAQ";
 import Invoice from "./components/Invoice";
 import "./App.css";
+import { routerBasename } from "./utils/basename";
 
 function Layout() {
   const location = useLocation();
@@ -34,7 +35,7 @@ function Layout() {
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
+    <BrowserRouter basename={routerBasename}>
       <Layout />
     </BrowserRouter>
   );
